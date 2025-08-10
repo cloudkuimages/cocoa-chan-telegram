@@ -38,8 +38,8 @@
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/your-username/cocoa-chan-md.git
-cd cocoa-chan-md
+git clone https://github.com/cloudkuimages/cocoa-chan-telegram.git
+cd cocoa-chan-telegram
 ```
 
 ### 2. Install Dependencies
