@@ -1,0 +1,25 @@
+{
+  "name": "CocoaChan-Telegram",
+  "version": "1.0.0",
+  "description": "Telegram bot with hot-reload plugin system by AlfiDev",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "axios": "^1.11.0",
+    "chalk": "^5.4.1",
+    "child_process": "^1.0.2",
+    "chokidar": "^3.6.0",
+    "cloudku-uploader": "^2.7.0",
+    "human-readable": "^0.2.1",
+    "moment-timezone": "^0.6.0",
+    "node-fetch": "^3.3.2",
+    "node-os-utils": "^1.3.7",
+    "node-telegram-bot-api": "^0.66.0",
+    "util": "^0.12.5",
+    "yt-search": "^2.13.1"
+  }
+}
