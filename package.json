@@ -1,7 +1,7 @@
 {
-  "name": "CocoaChan-Telegram",
+  "name": "xBOT",
   "version": "1.0.0",
-  "description": "Telegram bot with hot-reload plugin system by AlfiDev",
+  "description": "Telegram bot with hot-reload plugin system by XeyLabs",
   "main": "index.js",
   "type": "module",
   "scripts": {

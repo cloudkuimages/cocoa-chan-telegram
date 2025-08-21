@@ -53,16 +53,14 @@ let handler = async ({ conn, m }) => {
   }
   
   message += `Bot aktif 24/7\n`
-  message += `Dibuat oleh @CloudkuDev`
+  message += `Dibuat oleh XeyLabs`
   
   const buttons = createPaginationButtons(currentPage, totalPages)
   
-  const photoUrl = 'https://codeshare.cloudku.click/db/thumbnails/thumb_user_1.jpg'
-  
-  await conn.sendPhoto(m.chat.id, photoUrl, {
-    caption: message,
+  await conn.sendMessage(m.chat.id, message, {
     parse_mode: 'Markdown',
-    reply_markup: buttons
+    reply_markup: buttons,
+    disable_web_page_preview: true
   })
 }
 
@@ -175,18 +173,7 @@ function createPaginationButtons(currentPage, totalPages) {
   keyboard.push([
     {
       text: 'Website',
-      url: 'https://cloudkutube.eu'
-    },
-    {
-      text: 'Channel',
-      url: 'https://t.me/cloudkudev'
-    }
-  ])
-  
-  keyboard.push([
-    {
-      text: 'Developer',
-      url: 'https://t.me/cloudkudev'
+      url: 'https://forum.html-5.me'
     }
   ])
   
