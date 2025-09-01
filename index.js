@@ -12,7 +12,7 @@ if (major < 22) {
 }
 
 import TelegramBot from 'node-telegram-bot-api'
-import chokidar from 'chokidar
+import chokidar from 'chokidar'
 import { UploadFile } from 'cloudku-uploader'
 import path from 'path'
 import fs from 'fs/promises'
