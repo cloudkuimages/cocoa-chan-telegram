@@ -12,7 +12,8 @@ if (major < 22) {
 }
 
 import TelegramBot from 'node-telegram-bot-api'
-import chokidar from 'chokidar'
+import chokidar from 'chokidar
+import { UploadFile } from 'cloudku-uploader'
 import path from 'path'
 import fs from 'fs/promises'
 import chalk from 'chalk'
@@ -32,21 +33,21 @@ console.log(gradient(`
  ╚═════╝ ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═════╝  ╚═════╝    ╚═╝   
 `, ['#ff1493', '#ff69b4', '#ff1493', '#ff69b4', '#ff1493', '#ff69b4']))
 
-console.log(chalk.cyan.bold('                                   ✨ Version Telegram ✨'))
-console.log(chalk.magenta.italic('                                    👨‍💻 by AlfiDev 👨‍💻\n'))
+console.log(chalk.cyan.bold('                                    Version Telegram '))
+console.log(chalk.magenta.italic('                                     by AlfiDev \n'))
 
 const bot = new TelegramBot(config.telegramBotToken, { polling: true })
 const plugins = new Map()
-const pluginsDir = path.join(process.cwd(), 'plugins')
+const pluginsFIle = path.join(process.cwd(), 'plugins')
 
 async function loadPlugins() {
   plugins.clear()
   let loadedFiles = []
   try {
-    const files = await fs.readdir(pluginsDir)
+    const files = await fs.readdir(pluginsFIle)
     for (const file of files) {
       if (!file.endsWith('.js')) continue
-      const filePath = path.join(pluginsDir, file)
+      const filePath = path.join(pluginsFIle, file)
       const modulePath = `file://${filePath}?update=${Date.now()}`
       try {
         const { default: handler } = await import(modulePath)
@@ -142,7 +143,7 @@ bot.on('callback_query', async (cb) => {
   }
 })
 
-chokidar.watch([pluginsDir, path.join(process.cwd(), 'config.js'), path.join(process.cwd(), 'index.js')], {
+chokidar.watch([pluginsFIle, path.join(process.cwd(), 'config.js'), path.join(process.cwd(), 'index.js')], {
   ignored: /^\./, persistent: true, usePolling: true, interval: 500
 }).on('change', async (filePath) => {
   const filename = path.basename(filePath)
